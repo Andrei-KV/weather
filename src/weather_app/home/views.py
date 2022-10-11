@@ -13,6 +13,7 @@ def home(request):
     if response.status_code != 200:
         return HttpResponse("OK")
     data = response.json()
+    
     payload = {
         "city": data["name"],
         "weather": data["weather"][0]["main"],
